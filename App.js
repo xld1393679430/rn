@@ -7,93 +7,90 @@
  */
 
 import React from 'react';
-import type {Node} from 'react';
+import type { Node } from 'react';
 import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
+    SafeAreaView,
+    ScrollView,
+    StatusBar,
+    StyleSheet,
+    Text,
+    useColorScheme,
+    View,
+    Button,
 } from 'react-native';
 
 import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
+    Colors,
+    DebugInstructions,
+    Header,
+    LearnMoreLinks,
+    ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
 const Section = ({children, title}): Node => {
-  const isDarkMode = useColorScheme() === 'dark';
-  return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
+    const isDarkMode = useColorScheme() === 'dark';
+    return (
+        <View style={styles.sectionContainer}>
+            <Text
+                style={[
+                    styles.sectionTitle,
+                    {
+                        color: isDarkMode ? Colors.white : Colors.black,
+                    },
+                ]}>
+                {title}
+            </Text>
+            <Text
+                style={[
+                    styles.sectionDescription,
+                    {
+                        color: isDarkMode ? Colors.light : Colors.dark,
+                    },
+                ]}>
+                {children}
+            </Text>
+        </View>
+    );
 };
 
-const App: () => Node = () => {
-  const isDarkMode = useColorScheme() === 'dark';
+const App: () => Node = (props) => {
+    const isDarkMode = useColorScheme() === 'dark';
 
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
+    const backgroundStyle = {
+        backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
+    };
 
-  return (
-    <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-      <View style={{width: 50, height: 50, margin: 5, backgroundColor: '#eee', top: 100}}>
-        <Text>1</Text>
-      </View>
-      <View style={{width: 50, height: 50, margin: 5, backgroundColor: '#eee'}}>
-        <Text>2</Text>
-      </View>
-      <View style={{width: 50, height: 50, margin: 5, backgroundColor: '#eee'}}>
-        <Text>3</Text>
-      </View>
-      <View style={{width: 50, height: 50, margin: 5, backgroundColor: '#eee'}}>
-        <Text>4</Text>
-      </View>
-    </View>
-  );
+    console.log(props, 'props')
+    const { navigation } = props
+    return (
+        <View style={{padding: 20}}>
+            <Button title={'to FlatListDemo'}
+                    onPress={() => {
+                        navigation.navigate('FlatListDemo')
+                    }}
+            ></Button>
+            <Text>222</Text>
+        </View>
+    );
 };
 
 const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
+    sectionContainer: {
+        marginTop: 32,
+        paddingHorizontal: 24,
+    },
+    sectionTitle: {
+        fontSize: 24,
+        fontWeight: '600',
+    },
+    sectionDescription: {
+        marginTop: 8,
+        fontSize: 18,
+        fontWeight: '400',
+    },
+    highlight: {
+        fontWeight: '700',
+    },
 });
 
 export default App;

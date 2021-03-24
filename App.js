@@ -26,6 +26,7 @@ import {
     LearnMoreLinks,
     ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
+import Ionicons from 'react-native-vector-icons/Ionicons'
 
 const Section = ({children, title}): Node => {
     const isDarkMode = useColorScheme() === 'dark';
@@ -64,12 +65,27 @@ const App: () => Node = (props) => {
     const { navigation } = props
     return (
         <View style={{padding: 20}}>
+            <View>
+                <Text>矢量图标</Text>
+                <Ionicons name={'male-female-sharp'} size={50} />
+                <Ionicons name={'man-sharp'} size={50} />
+            </View>
             <Button title={'to FlatListDemo'}
                     onPress={() => {
                         navigation.navigate('FlatListDemo')
                     }}
             ></Button>
-            <Text>222</Text>
+            <Button title={'to SectionListDemo'}
+                    onPress={() => {
+                        navigation.navigate('SectionListDemo')
+                    }}
+            ></Button>
+
+            <Button title={'to NavigationDemo'}
+                    onPress={() => {
+                        navigation.navigate('NavigationDemo')
+                    }}
+            ></Button>
         </View>
     );
 };

@@ -10,7 +10,7 @@ import NavigationDemo from './page/Navigation';
 import NavigationPage1 from './page/Navigation/Page1';
 import NavigationPage2 from './page/Navigation/Page2';
 import NavigationPage3 from './page/Navigation/Page3';
-import BottomTabDemo from './page/BottomTab'
+import Demos from './page/Demos'
 import { name as appName } from './app.json';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createAppContainer } from 'react-navigation';
@@ -73,13 +73,9 @@ const AppNavigator = createStackNavigator(
                 }
             }
         },
-        // BottomTabDemo: {
-        //     screen: BottomTabDemo,
-        //     navigationOptions: {
-        //         title: '底部导航',
-        //         headerBackTitle: '返回提示'
-        //     },
-        // },
+        Demos: {
+            screen: Demos,
+        },
     },
     {
         defaultNavigationOptions: {}

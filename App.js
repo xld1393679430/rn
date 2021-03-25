@@ -66,7 +66,7 @@ const App: () => Node = (props) => {
     return (
         <View style={{padding: 20}}>
             <View>
-                <Text>矢量图标</Text>
+                <Text>矢量图标：</Text>
                 <Ionicons name={'male-female-sharp'} size={50} />
                 <Ionicons name={'man-sharp'} size={50} />
             </View>
@@ -84,6 +84,12 @@ const App: () => Node = (props) => {
             <Button title={'to NavigationDemo'}
                     onPress={() => {
                         navigation.navigate('NavigationDemo')
+                    }}
+            ></Button>
+
+            <Button title={'to Demos'}
+                    onPress={() => {
+                        navigation.navigate('Demos')
                     }}
             ></Button>
         </View>

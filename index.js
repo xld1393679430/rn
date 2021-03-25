@@ -11,6 +11,7 @@ import NavigationPage1 from './page/Navigation/Page1';
 import NavigationPage2 from './page/Navigation/Page2';
 import NavigationPage3 from './page/Navigation/Page3';
 import Demos from './page/Demos'
+import MyComponents from './page/Components'
 import { name as appName } from './app.json';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createAppContainer } from 'react-navigation';
@@ -76,6 +77,9 @@ const AppNavigator = createStackNavigator(
         Demos: {
             screen: Demos,
         },
+        MyComponents: {
+            screen: MyComponents
+        }
     },
     {
         defaultNavigationOptions: {}

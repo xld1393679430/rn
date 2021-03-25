@@ -8,11 +8,13 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint .",
-    "build-android": "cd android && ./gradlew assembleRelease"
+    "build-android": "cd android && ./gradlew assembleRelease",
+    "devtools": "react-devtools"
   },
   "dependencies": {
     "@react-navigation/native": "^5.9.3",
     "react": "17.0.1",
+    "react-devtools": "^4.10.1",
     "react-native": "0.64.0",
     "react-native-drawer": "^2.5.1",
     "react-native-gesture-handler": "^1.10.3",

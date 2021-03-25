@@ -92,6 +92,14 @@ const App: () => Node = (props) => {
                         navigation.navigate('Demos')
                     }}
             ></Button>
+
+            <Button title={'to MyComponents'}
+                    onPress={() => {
+                        navigation.navigate('MyComponents')
+                    }}
+            ></Button>
+
+
         </View>
     );
 };

@@ -47,6 +47,13 @@ const Page = ({ navigation }) => {
                     }}
             ></Button>
 
+            <Button title={'to FetchDemo'}
+                    onPress={() => {
+                        navigation.navigate('FetchDemo')
+                    }}
+            ></Button>
+
+
         </View>
     )
 }

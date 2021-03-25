@@ -9,6 +9,7 @@ import FlexDemo from './Flex'
 import ImageDemo from './Image'
 import ButtonDemo from './Button'
 import AnimatedDemo from './Animated'
+import FetchDemo from './Fetch'
 
 export default createStackNavigator({
     Home: {
@@ -34,5 +35,8 @@ export default createStackNavigator({
     },
     AnimatedDemo: {
         screen: AnimatedDemo
+    },
+    FetchDemo: {
+        screen: FetchDemo
     },
 })

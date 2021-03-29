@@ -192,7 +192,19 @@ android {
 
         }
     }
+
+    packagingOptions {
+            pickFirst "lib/arm64-v8a/librealm-jni.so"
+     }
 }
+
+configurations.all {
+    resolutionStrategy {
+        force "com.facebook.soloader:soloader:0.8.2"
+    }
+}
+
+def useIntlJsc = false
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
@@ -220,6 +232,12 @@ dependencies {
         releaseImplementation files(hermesPath + "hermes-release.aar")
     } else {
         implementation jscFlavor
+    }
+
+    if (useIntlJsc) {
+        implementation 'org.webkit:android-jsc-intl:+'
+    } else {
+        implementation 'org.webkit:android-jsc:+'
     }
 }
 
